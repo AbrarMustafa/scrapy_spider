@@ -6,8 +6,7 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-from sqlalchemy.orm import sessionmaker
-from scrapy_spider.models import QuoteDB, db_connect, create_table
+# from scrapy_spider.models import QuoteDB, db_connect, create_table
 
 class ScrapySpiderPipeline(object):
     def __init__(self):
@@ -27,9 +26,9 @@ class ScrapySpiderPipeline(object):
 
         """
         # session = self.Session()
-        quotedb = QuoteDB()
-        quotedb.quote = item["quote"]
-        quotedb.author = item["author"]
+        # quotedb = QuoteDB()
+        # quotedb.quote = item["quote"]
+        # quotedb.author = item["author"]
 
         # try:
         #     session.add(quotedb)

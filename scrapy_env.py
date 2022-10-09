@@ -1,9 +1,3 @@
-#! /usr/bin/env python
-# -*- coding: utf-8 -*-
-# vim:fenc=utf-8
-#
-# Copyright © 2017-08-25 michael_yin
-#
 
 from __future__ import print_function
 import re, json , copy

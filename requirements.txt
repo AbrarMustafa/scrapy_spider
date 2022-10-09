@@ -1,8 +1,5 @@
 django
 scrapy
-scrapy-djangoitem
-mysqlclient
-mysql-client
 xlwt
 openpyxl
 pandas
