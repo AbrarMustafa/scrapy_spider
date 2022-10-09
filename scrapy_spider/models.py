@@ -20,10 +20,10 @@ from scrapy.utils.project import get_project_settings
 # def create_table(engine):
 #     DeclarativeBase.metadata.create_all(engine)
 
-# class QuoteDB(DeclarativeBase):
-#     __tablename__ = "quote_table"
+# class OoyyoDB(DeclarativeBase):
+#     __tablename__ = "ooyyo_table"
 
 #     id = Column(Integer, primary_key=True)
-#     quote = Column('quote', Text())
+#     ooyyo = Column('ooyyo', Text())
 #     author = Column('author', String(100))
 

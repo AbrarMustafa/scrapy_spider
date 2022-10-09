@@ -6,7 +6,7 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-# from scrapy_spider.models import QuoteDB, db_connect, create_table
+# from scrapy_spider.models import OoyyoDB, db_connect, create_table
 
 class ScrapySpiderPipeline(object):
     def __init__(self):
@@ -26,12 +26,12 @@ class ScrapySpiderPipeline(object):
 
         """
         # session = self.Session()
-        # quotedb = QuoteDB()
-        # quotedb.quote = item["quote"]
-        # quotedb.author = item["author"]
+        # ooyyodb = OoyyoDB()
+        # ooyyodb.ooyyo = item["ooyyo"]
+        # ooyyodb.author = item["author"]
 
         # try:
-        #     session.add(quotedb)
+        #     session.add(ooyyodb)
         #     session.commit()
         # except:
         #     session.rollback()

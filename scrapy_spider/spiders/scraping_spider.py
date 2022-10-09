@@ -3,6 +3,7 @@ import scrapy
 import pandas as pd
 import openpyxl
  
+# Listings Listings Spider
 class ListingsSpider(scrapy.Spider):
     name = 'listings'
     allowed_domains = ['ooyyo.com']
@@ -14,6 +15,7 @@ class ListingsSpider(scrapy.Spider):
             "X-KL-Ajax-Request": "Ajax_Request","X-Niobe-Short-Circuited": "true"
         }
    
+   # Make a scrapy. Request to Ooyyo.
     def start_requests(self):
         url = f"https://www.ooyyo.com/denmark/used-cars-for-sale/c=CDA31D7114D3854F111B9E6FAA651453/"
  
@@ -26,6 +28,7 @@ class ListingsSpider(scrapy.Spider):
 
     loop = 0
     count=0
+    # Parse the resultset into a scrapy. Request.
     def initial_parse(self, response):
         next_page_url = response.xpath("//div[@class='resultset']/a/@href").getall() 
         if next_page_url:
@@ -43,12 +46,15 @@ class ListingsSpider(scrapy.Spider):
 
     title = []
     data = []
+    # Parse basic info.
     def basic_info_parse(self, response):
         info = response.xpath("//li/div/span[@class='_js-hook-main-price']/text()").extract_first('').strip()
         if info:
             try:
+                # Parse the response and return a tuple.
                 priceMeta = response.xpath("//meta[@name='description']/@content")[0].extract()
                 t_price = response.xpath("//ul[@class='basic-info']/li/div/text()").extract()[0]
+                # Parse a JS hook main price.
                 price=priceMeta.split(", ")[2]
                 t_make = response.xpath("//ul[@class='basic-info']/li/div/text()").extract()[2]
                 make = response.xpath("//ul[@class='basic-info']/li/div/text()").extract()[3]
@@ -89,7 +95,7 @@ class ListingsSpider(scrapy.Spider):
             if self.count==self.loop :
                 df = pd.DataFrame(self.data, columns=self.title)
 
-                df.to_excel('pandas_to_excel.xlsx', sheet_name='data_sheet')
+                df.to_excel('ooyyo_to_excel.xlsx', sheet_name='data_sheet')
 
             yield None
                 

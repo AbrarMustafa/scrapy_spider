@@ -8,7 +8,7 @@
             "module": "scrapy",
             "args": [
                 "runspider",
-                "scrapy_spider/spiders/quotes_spider.py"
+                "scrapy_spider/spiders/scraping_spider.py"
             ],
             "console": "integratedTerminal"
         }

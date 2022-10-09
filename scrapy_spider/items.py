@@ -8,6 +8,6 @@
 import scrapy
 
 
-class QuoteItem(scrapy.Item):
-    author = scrapy.Field()
-    quote = scrapy.Field()
+# class OoyyoItem(scrapy.Item):
+#     author = scrapy.Field()
+    # ooyyo = scrapy.Field()
